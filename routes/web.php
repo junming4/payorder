@@ -11,46 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    //return view('welcome');
-    //return view('vue');
-    //$res = \App\Models\User::find(2);
-    //dump($res);
-
-    //$res = (new \App\Models\TestMongo)->createInfo();
-    //var_dump($res);
-
-    /*$res = \App\Models\User::create([
-        'user_name' => '肖俊明',
-        'mobile' => '13512719787',
-        'email' => '2284876299@qq.com',
-        'password' => 13333
-    ]);
-
-    dump($res);*/
-    for ($i=0; $i <= 1000; $i++){
-        $this->dispatch(new \App\Jobs\TestJob());
-    }
-
-
+Route::group(['prefix' => 'cart', 'namespace' => 'Cart'], function ($route) {
+    $route->get('store', ['as' => 'cart.store', 'uses' => 'IndexController@store']);
+    $route->get('index', ['as' => 'cart.index', 'uses' => 'IndexController@index']);
 });
 
-Route::get('/test','Home\IndexController@index');
-
-Route::get('/isEmail',function (){
-   $res =  isEmail('2284876299@qq.com');
-   if($res) {
-       return "ok";
-   }else{
-       return "no";
-   }
+Route::get('/',function(){
+    return \SimpleSoftwareIO\QrCode\Facades\QrCode::generate('http://www.baidu.com');
 });
 
-
-/*Route::group(['namespace' => 'Home'], function ($route) {
-    $route->get('/test',['as'=>'index','uses' => 'IndexController@index']);
-});*/
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
