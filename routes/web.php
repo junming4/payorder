@@ -19,7 +19,8 @@ Route::group(['prefix' => 'cart', 'namespace' => 'Cart'], function ($route) {
 Route::get('/',function(){
 
     $url = url("/cart/store/?goods_id=1&store_id=1&goods_name=".urlencode('商品id')."&goods_num=2&price=2.09");
+    $url2 = url("/cart/store/?goods_id=2&store_id=1&goods_name=".urlencode('商品id2')."&goods_num=1&price=4");
 
-    return view('welcome',compact('url'));
+    return view('welcome',compact('url', 'url2'));
 });
 

@@ -83,6 +83,7 @@
                 </div>
 
                 {!! QrCode::size(100)->generate($url) !!}
+                <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate($url2)) !!} ">
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
