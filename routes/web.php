@@ -17,6 +17,8 @@ Route::group(['prefix' => 'cart', 'namespace' => 'Cart'], function ($route) {
 });
 
 Route::get('/',function(){
-    return \SimpleSoftwareIO\QrCode\Facades\QrCode::generate('http://www.baidu.com');
+
+    $url = url("/cart/store/?goods_id=1&store_id=1&goods_name=".urlencode('商品id')."&goods_num=2&price=2.09");
+    return \SimpleSoftwareIO\QrCode\Facades\QrCode::generate($url);
 });
 
