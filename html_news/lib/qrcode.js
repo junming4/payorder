@@ -1,7 +1,8 @@
 (function($) {
     var Qrcode = function(tempBtn) {
         var _this_ = this;
-        var isWeiboWebView = /__weibo__/.test(navigator.userAgent);
+        //var isWeiboWebView = /__weibo__/.test(navigator.userAgent);
+        var isWeiboWebView = true;
 
         if (isWeiboWebView) {
             if (window.WeiboJSBridge) {
