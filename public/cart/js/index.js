@@ -98,7 +98,7 @@ $('.list input').change(function(){
 		} 
 		checkbox($(this));
 		sum();
-})
+});
 /*子项全选*/
 $("ul input[type='checkbox']").change(function(){
 	checkbox($(this));
@@ -112,13 +112,14 @@ $("ul input[type='checkbox']").change(function(){
 	} 
 	sum();
 })
-/*点击加一*/
+		/*点击加一*/
 		$('.btn2').click(function(){
 			$(this).prev('.number').html(parseInt($(this).prev('.number').html())+1);
+
 			/*计算总钱数*/
-		total();
-		/*计算总钱数*/
-		})
+			total();
+			/*计算总钱数*/
+		});
 		/*点击加一*/
 		/*点击减一*/
 		$('.btn1').click(function(){
