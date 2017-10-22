@@ -187,11 +187,12 @@ return [
         Collective\Html\HtmlServiceProvider::class, //html构建器
         Jenssegers\Mongodb\MongodbServiceProvider::class, //mongodb 操作器
         VladimirYuldashev\LaravelQueueRabbitMQ\LaravelQueueRabbitMQServiceProvider::class, //LaravelQueueRabbitMQ
-        Barryvdh\Debugbar\ServiceProvider::class, //调试工具
+        //Barryvdh\Debugbar\ServiceProvider::class, //调试工具
         Jenssegers\Agent\AgentServiceProvider::class,
         App\Providers\AppBindServiceProvider::class, //绑定仓库
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class, //购物车
-        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class //二维码
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class, //二维码
+        //Overtrue\LaravelWeChat\ServiceProvider::class,
 
     ],
 
@@ -243,7 +244,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         //phper add
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        //'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class
