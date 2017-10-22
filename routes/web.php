@@ -24,15 +24,15 @@ Route::get('/',function(){
     return view('welcome',compact('url', 'url2'));
 });
 
-Route::get('/wechat',function (){
-    $signature = $_GET["signature"];
-    $timestamp = $_GET["timestamp"];
-    $nonce = $_GET["nonce"];
+Route::get('/wechat',function (Request $request){
+    $signature = $request->get("signature");
+    $timestamp = $request->get("timestamp");
+    $nonce = $request->get("nonce");
     $tmpArr = array($signature, $nonce);
     sort($tmpArr, SORT_STRING);
     $tmpStr = implode( $tmpArr );
     $tmpStr = sha1( $tmpStr );
-    Log::info('调用了');
+    Log::info(var_export($_GET,true));
     if( $timestamp ){
         return true;
     }else{
