@@ -35,6 +35,15 @@ class WechatController extends Controller
         $timestamp = $request->get("timestamp",'');
         $nonce = $request->get("nonce",'');*/
         $token = 'wechat112';
+
+        $APPID = 'wx1062854dd7b2dbd6';
+        $APPSECRET = 'bc623d22ecaa944ca4e7fdd5ef79f16b';
+
+
+        $url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.$APPID.'&secret='.$APPSECRET;
+        $contents = file_get_contents($url);
+        dd($contents);
+
         $url = 'https://api.weixin.qq.com/scan/merchantinfo/get?access_token='.$token;
         $contents = file_get_contents($url);
         dd($contents);
