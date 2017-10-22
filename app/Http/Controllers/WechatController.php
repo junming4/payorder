@@ -45,6 +45,7 @@ class WechatController extends Controller
         $contents = json_decode($contents,true);
 
         $url = 'https://api.weixin.qq.com/scan/merchantinfo/get?access_token='.$contents['access_token'];
+        dd($url);
         $contents = file_get_contents($url);
         dd($contents);
         /*$tmpArr = array($token, $timestamp, $nonce);
