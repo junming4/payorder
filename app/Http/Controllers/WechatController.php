@@ -30,12 +30,15 @@ class WechatController extends Controller
      */
     public function index(Request $request)
     {
-        $echoStr = $request->get("echostr",'');
+        /*$echoStr = $request->get("echostr",'');
         $signature = $request->get("signature",'');
         $timestamp = $request->get("timestamp",'');
-        $nonce = $request->get("nonce",'');
+        $nonce = $request->get("nonce",'');*/
         $token = 'wechat112';
-        $tmpArr = array($token, $timestamp, $nonce);
+        $url = 'https://api.weixin.qq.com/scan/merchantinfo/get?access_token='.$token;
+        $contents = file_get_contents($url);
+        dd($contents);
+        /*$tmpArr = array($token, $timestamp, $nonce);
         sort($tmpArr);
         $tmpStr = implode($tmpArr);
         $tmpStr = sha1($tmpStr);
@@ -44,6 +47,6 @@ class WechatController extends Controller
             return $echoStr;
         } else {
             return '';
-        }
+        }*/
     }
 }
