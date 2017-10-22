@@ -13,6 +13,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class WechatController extends Controller
 {
@@ -39,6 +40,7 @@ class WechatController extends Controller
         $tmpStr = implode($tmpArr);
         $tmpStr = sha1($tmpStr);
         if ($tmpStr == $signature) {
+            Log::info($echoStr.'kkk');
             return $echoStr;
         } else {
             return '';
