@@ -24,19 +24,5 @@ Route::get('/',function(){
     return view('welcome',compact('url', 'url2'));
 });
 
-Route::get('/wechat',function (\Illuminate\Support\Facades\Request $request){
-    $signature = $request->get("signature");
-    $timestamp = $request->get("timestamp");
-    $nonce = $request->get("nonce");
-    $tmpArr = array($signature, $nonce);
-    sort($tmpArr, SORT_STRING);
-    $tmpStr = implode( $tmpArr );
-    $tmpStr = sha1( $tmpStr );
-    Log::info(var_export($_GET,true));
-    if( $timestamp ){
-        return true;
-    }else{
-        return false;
-    }
-});
+Route::get('/wechat','WechatController@index');
 
