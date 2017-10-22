@@ -32,6 +32,7 @@ Route::get('/wechat',function (){
     sort($tmpArr, SORT_STRING);
     $tmpStr = implode( $tmpArr );
     $tmpStr = sha1( $tmpStr );
+    Log::info('调用了');
     if( $timestamp ){
         return true;
     }else{
