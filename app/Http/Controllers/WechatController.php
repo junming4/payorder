@@ -41,7 +41,7 @@ class WechatController extends Controller
         if ($tmpStr == $signature) {
             return $echoStr;
         } else {
-            return false;
+            return '';
         }
     }
 }
