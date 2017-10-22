@@ -29,11 +29,11 @@ class WechatController extends Controller
      */
     public function index(Request $request)
     {
-        dd("ok");
-        $echoStr = $request->get("echostr");
-        $signature = $request->get("signature");
-        $timestamp = $request->get("timestamp");
-        $nonce = $request->get("nonce");
+        $echoStr = $request->get("echostr",'');
+        dd($echoStr);
+        $signature = $request->get("signature",'');
+        $timestamp = $request->get("timestamp",'');
+        $nonce = $request->get("nonce",'');
         $token = 'wechat112';
         $tmpArr = array($token, $timestamp, $nonce);
         sort($tmpArr);
