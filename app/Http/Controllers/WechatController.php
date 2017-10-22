@@ -42,9 +42,9 @@ class WechatController extends Controller
 
         $url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.$APPID.'&secret='.$APPSECRET;
         $contents = file_get_contents($url);
-        dd($contents);
+        $contents = json_decode($contents,true);
 
-        $url = 'https://api.weixin.qq.com/scan/merchantinfo/get?access_token='.$token;
+        $url = 'https://api.weixin.qq.com/scan/merchantinfo/get?access_token='.$contents['access_token'];
         $contents = file_get_contents($url);
         dd($contents);
         /*$tmpArr = array($token, $timestamp, $nonce);
