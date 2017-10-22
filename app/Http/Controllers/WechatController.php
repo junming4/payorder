@@ -30,7 +30,6 @@ class WechatController extends Controller
     public function index(Request $request)
     {
         $echoStr = $request->get("echostr",'');
-        dd($echoStr);
         $signature = $request->get("signature",'');
         $timestamp = $request->get("timestamp",'');
         $nonce = $request->get("nonce",'');
