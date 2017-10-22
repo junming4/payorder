@@ -26,7 +26,7 @@ Route::get('/',function(){
 
 Route::get('/wechat',function (){
     $signature = $_GET["signature"];
-    $timestamp = _GET["timestamp"];
+    $timestamp = $_GET["timestamp"];
     $nonce = $_GET["nonce"];
     $tmpArr = array($signature, $nonce);
     sort($tmpArr, SORT_STRING);
