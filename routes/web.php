@@ -24,3 +24,18 @@ Route::get('/',function(){
     return view('welcome',compact('url', 'url2'));
 });
 
+Route::get('/wechat',function (){
+    $signature = $_GET["signature"];
+    $timestamp = _GET["timestamp"];
+    $nonce = $_GET["nonce"];
+    $tmpArr = array($signature, $nonce);
+    sort($tmpArr, SORT_STRING);
+    $tmpStr = implode( $tmpArr );
+    $tmpStr = sha1( $tmpStr );
+    if( $timestamp ){
+        return true;
+    }else{
+        return false;
+    }
+});
+
