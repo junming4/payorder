@@ -24,7 +24,7 @@ Route::get('/',function(){
     return view('welcome',compact('url', 'url2'));
 });
 
-Route::get('/wechat',function (Request $request){
+Route::get('/wechat',function (\Illuminate\Support\Facades\Request $request){
     $signature = $request->get("signature");
     $timestamp = $request->get("timestamp");
     $nonce = $request->get("nonce");
